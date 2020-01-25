@@ -1,6 +1,20 @@
-// const Sequelize = require('sequelize');
-// const dbConfig = require('../config/databse');
+// conexao dos models com o banco
+import Sequelize from 'sequelize';
+import User from '../app/models/User';
+import dbConfig from '../config/database';
 
-// const connection = new Sequelize(dbConfig);
+const models = [User];
 
-// module.exports = connection;
+class Database {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.connection = new Sequelize(dbConfig);
+
+    models.map(model => model.init(this.connection));
+  }
+}
+
+export default new Database();
