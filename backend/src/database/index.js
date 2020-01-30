@@ -26,7 +26,7 @@ class Database {
 
   mongo() {
     this.mongoConnection = mongoose.connect(
-      'mongodb+srv://omnistack10:omnistack10@cluster0-ud59o.mongodb.net/week10?retryWrites=true&w=majority',
+      'mongodb+srv://omnistack10:omnistack10@cluster0-ud59o.mongodb.net/gobarber?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
