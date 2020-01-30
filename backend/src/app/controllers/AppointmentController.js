@@ -67,6 +67,7 @@ class AppointmentController {
     // checando se a data já passou
 
     const hourStart = startOfHour(parseISO(date));
+
     if (isBefore(hourStart, new Date())) {
       return res
         .status(400)
