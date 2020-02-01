@@ -25,13 +25,10 @@ class Database {
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect(
-      'mongodb+srv://omnistack10:omnistack10@cluster0-ud59o.mongodb.net/gobarber?retryWrites=true&w=majority',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
   }
 }
 
