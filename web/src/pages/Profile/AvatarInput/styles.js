@@ -18,5 +18,9 @@ export const Container = styled.div`
       border: 3px solid #eee;
       background: #eee;
     }
+
+    input {
+      display: none;
+    }
   }
 `;
