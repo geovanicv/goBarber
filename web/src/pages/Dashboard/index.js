@@ -12,6 +12,7 @@ import {
 import { utcToZonedTime } from 'date-fns-tz';
 import pt from 'date-fns/locale/pt';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+
 import api from '../../services/api';
 
 import { Container, Time } from './styles';
@@ -22,7 +23,7 @@ export default function Dashboard() {
   const [schedule, setSchedule] = useState([]);
   const [date, setDate] = useState(new Date());
 
-  const dateFormated = useMemo(
+  const dateFormatted = useMemo(
     () => format(date, "d 'de' MMMM", { locale: pt }),
     [date]
   );
@@ -33,11 +34,11 @@ export default function Dashboard() {
         params: { date },
       });
 
+      // timezone local
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       const data = range.map(hour => {
         const checkDate = setSeconds(setMinutes(setHours(date, hour), 0), 0);
-
         const compareDate = utcToZonedTime(checkDate, timezone);
 
         return {
@@ -57,6 +58,7 @@ export default function Dashboard() {
   function handlePrevDay() {
     setDate(subDays(date, 1));
   }
+
   function handleNextDay() {
     setDate(addDays(date, 1));
   }
@@ -65,19 +67,20 @@ export default function Dashboard() {
     <Container>
       <header>
         <button type="button" onClick={handlePrevDay}>
-          <MdChevronLeft color="fff" size={36} />
+          <MdChevronLeft size={36} color="#FFF" />
         </button>
-        <strong>{dateFormated}</strong>
+        <strong>{dateFormatted}</strong>
         <button type="button" onClick={handleNextDay}>
-          <MdChevronRight color="fff" size={36} />
+          <MdChevronRight size={36} color="#FFF" />
         </button>
       </header>
+
       <ul>
         {schedule.map(time => (
           <Time key={time.time} past={time.past} available={!time.appointment}>
             <strong>{time.time}</strong>
             <span>
-              {time.appointment ? time.appointment.user.name : 'Em aberto'}
+              {time.appointment ? time.appointment.user.name : 'Em Aberto'}
             </span>
           </Time>
         ))}
