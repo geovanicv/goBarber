@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   height: 64px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,6 @@ export const Content = styled.div`
     img {
       margin-right: 20px;
       padding-right: 20px;
-      border-right: 1px solid #eee;
     }
 
     a {
@@ -37,9 +36,9 @@ export const Content = styled.div`
 
 export const Profile = styled.div`
   display: flex;
+  align-items: center;
   margin-left: 20px;
   padding-left: 20px;
-  border-left: 1px solid #eee;
 
   div {
     text-align: right;
@@ -58,8 +57,8 @@ export const Profile = styled.div`
     }
   }
   img {
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
   }
 `;
