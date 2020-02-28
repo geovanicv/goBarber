@@ -8,11 +8,7 @@ const Stack = createStackNavigator();
 
 function Routes() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {backgroundColor: '#7159c1'},
-        headerTintColor: '#FFF',
-      }}>
+    <Stack.Navigator headerMode="none">
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
