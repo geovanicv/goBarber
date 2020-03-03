@@ -8,6 +8,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
 import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,21 +27,27 @@ function Routes() {
         inactiveTintColor: 'rgba(255,255,255,0.6)',
       }}
       screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => {
+        tabBarIcon: () => {
           let iconName;
 
           if (route.name === 'Dashboard') {
             iconName = 'event';
+          } else if (route.name === 'Profile') {
+            iconName = 'person';
           }
 
-          // You can return any component that you like here!
-          return <Icon name={iconName} size={size} color={color} />;
+          return <Icon name={iconName} size={20} color="#FFF" />;
         },
       })}>
       <Tab.Screen
         name="Dashboard"
         component={Dashboard}
         options={{title: 'Agendamentos'}}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{title: 'Meu Perfil'}}
       />
     </Tab.Navigator>
   ) : (
