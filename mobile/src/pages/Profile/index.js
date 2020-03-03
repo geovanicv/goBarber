@@ -3,10 +3,6 @@ import {View} from 'react-native';
 
 // import { Container } from './styles';
 
-export default function Dashboard() {
+export default function Profile() {
   return <View />;
 }
-
-Dashboard.navigationOptions = {
-  tabBarLabel: 'Agendamentos',
-};
