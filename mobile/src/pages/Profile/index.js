@@ -1,7 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
 import {signOut} from '../../store/modules/auth/actions';
 import {updateProfileRequest} from '../../store/modules/user/actions';
 
@@ -115,8 +113,8 @@ export default function Profile() {
             onChangeText={setConfirmPassword}
           />
 
-          <SubmitButton onPress={handleSubmit}>Atualizar perfil</SubmitButton>
-          <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton>
+          <SubmitButton onPress={handleSubmit}>Atualizar Perfil</SubmitButton>
+          <LogoutButton onPress={handleLogout}> Sair do Gobarber</LogoutButton>
         </Form>
       </Container>
     </Background>
