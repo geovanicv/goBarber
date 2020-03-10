@@ -4,10 +4,10 @@ import Background from '../../../components/Background';
 
 // import { Container } from './styles';
 
-export default function SelectDateTime() {
+export default function SelectDateTime({provider}) {
   return (
     <Background>
-      <Text>ksjdfs</Text>
+      <Text>{provider}</Text>
     </Background>
   );
 }

@@ -53,7 +53,17 @@ const StackAgendamentoScreen = ({navigation}) => (
     <StackAgendamento.Screen
       name="SelectDateTime"
       component={SelectDateTime}
-      options={{title: 'Selecione a data'}}
+      options={{
+        title: 'Selecione a data',
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('SelectProvider');
+            }}>
+            <Icon name="chevron-left" size={20} color="#FFF" />
+          </TouchableOpacity>
+        ),
+      }}
     />
     <StackAgendamento.Screen
       name="Confirm"
