@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {Container, DateButton, DateText} from './styles';
 
-export default function DateInput({date, onchange}) {
+export default function DateInput({date, onChange}) {
   const dateFormatted = useMemo(
     () => format(date, "dd 'de' MMMM 'de' yyyy", {locale: pt}),
     [date]
@@ -21,7 +21,7 @@ export default function DateInput({date, onchange}) {
     if (action === DatePickerAndroid.dateSetAction) {
       const selectedDate = new Date(year, month, day);
 
-      onchange(selectedDate);
+      onChange(selectedDate);
     }
   }
 
