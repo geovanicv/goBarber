@@ -68,7 +68,17 @@ const StackAgendamentoScreen = ({navigation}) => (
     <StackAgendamento.Screen
       name="Confirm"
       component={Confirm}
-      options={{title: 'Confirmar'}}
+      options={{
+        title: 'Confirmar',
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('SelectDateTime');
+            }}>
+            <Icon name="chevron-left" size={20} color="#FFF" />
+          </TouchableOpacity>
+        ),
+      }}
     />
   </StackAgendamento.Navigator>
 );
